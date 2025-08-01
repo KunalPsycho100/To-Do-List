@@ -1,23 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name = "viewport" content="width = device-width,initial scale = 1">
-    <title> To-Do List</title>
-    <link rel = "stylesheet" href = "style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIS 5, 6</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container for all content */
+        .container {
+            width: 90%;
+            max-width: 960px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Heading Style */
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* PDF Buttons Container */
+        .pdf-buttons-container {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Space between buttons */
+            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+        }
+
+        .pdf-link {
+            display: inline-block;
+            flex-grow: 1; /* Allows buttons to grow to fill space */
+            max-width: 250px;
+            padding: 1rem 2rem;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .pdf-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-top: 2rem;
+            max-width: 100%;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .pdf-buttons-container {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .pdf-link {
+                width: 100%;
+                max-width: 300px;
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class = container>
-    <div class = "  Todo-app">
-        <h2>
-            To-Do List<img src="Images/icon.png">
-        </h2>
-        <div class="row">
-            <input type="text" id ="input-box" placeholder="Add new tasks">
-            <button onclick="addTask()">ADD</button>
+
+    <div class="container" id="main-container">
+        <h1>WIS (Work Instruction Sheet) 5, 6</h1>
+
+        <div class="pdf-buttons-container">
+            <a href="BL-05 PISTON SELECTION.pdf" class="pdf-link">Download WIS 5</a>
+            <a href="BL-06 RE SCANNING.pdf" class="pdf-link">Download WIS 6</a>
         </div>
-        <ul id="list-container">
-        </ul>
+
+        <div class="video-section">
+            <video controls>
+                <source src="Video Project 6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
-    <script src="script.js"></script>r
+
+    <script>
+        // JavaScript for a simple fade-in effect on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('main-container');
+            container.classList.add('visible');
+        });
+    </script>
+
 </body>
 </html>
