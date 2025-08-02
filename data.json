@@ -1,0 +1,16 @@
+[
+    {
+        "id": "wis-05",
+        "sheetName": "WIS 5 - Piston Selection",
+        "pdfLink": "BL-05 PISTON SELECTION.pdf",
+        "videoLink": "Video Project 6.mp4",
+        "description": "Comprehensive guide for selecting the correct piston type based on engine specifications and performance requirements"
+    },
+    {
+        "id": "wis-06",
+        "sheetName": "WIS 6 - RE Scanning",
+        "pdfLink": "BL-06 RE SCANNING.pdf",
+        "videoLink": "Video Project 6.mp4",
+        "description": "Detailed procedures for conducting RE scanning operations, including equipment setup and data analysis techniques"
+    }
+]
